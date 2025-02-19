@@ -1,8 +1,10 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background-color: rgb(187, 182, 175);
-  overflow-x: hidden; /* Evita scroll horizontal */
+  overflow-x: hidden;
+  /* Evita scroll horizontal */
 }
 
 .header {
@@ -11,53 +13,70 @@ html, body {
 }
 
 .img-container {
-  width: 100%;
+  width: 700px;
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden; /* Evita que imágenes fuera del contenedor se vean */
+  overflow: hidden;
+  /* Evita que imágenes fuera del contenedor se vean */
 }
 
-@keyframes fadeSlide {
-  0% {
-      opacity: 0;
-      transform: translateX(100%) scale(1.1);
-  }
-  10%, 40% {
-      opacity: 1;
-      transform: translateX(0) scale(1);
-  }
-  60% {
-      opacity: 0;
-      transform: translateX(-100%) scale(0.9);
-  }
-  100% {
-      opacity: 0;
-      transform: translateX(-100%);
-  }
-}
-
-.img-container > img {
-  width: 1100px;
+.img-container img {
+  width: 100%;
   height: 400px;
   position: absolute;
   object-fit: cover;
   opacity: 0;
-  animation: fadeSlide 10s infinite;
+  transition: opacity 2s ease-in-out;
+  animation: fadeSlide 32s infinite;
 }
 
-/* Ajuste de los tiempos de animación */
-img:nth-child(1) {
+@keyframes fadeSlide {
+
+  0%,
+  20% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  25%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* Ajuste preciso de tiempos de animación */
+.img-container img:nth-child(1) {
   animation-delay: 0s;
 }
-img:nth-child(2) {
-  animation-delay: 3s;
+
+.img-container img:nth-child(2) {
+  animation-delay: 4s;
 }
-img:nth-child(3) {
-  animation-delay: 6s;
+
+.img-container img:nth-child(3) {
+  animation-delay: 8s;
 }
-img:nth-child(4) {
-  animation-delay: 9s;
+
+.img-container img:nth-child(4) {
+  animation-delay: 12s;
+}
+
+.img-container img:nth-child(5) {
+  animation-delay: 16s;
+}
+
+.img-container img:nth-child(6) {
+  animation-delay: 20s;
+}
+
+.img-container img:nth-child(7) {
+  animation-delay: 24s;
+}
+
+.img-container img:nth-child(8) {
+  animation-delay: 28s;
 }
